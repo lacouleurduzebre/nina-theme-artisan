@@ -1,0 +1,18 @@
+infos:
+    nom: Artisan
+    auteur: la couleur du Zèbre
+    site: https://www.lacouleurduzebre.com
+    description: Thème artisan
+champs:
+    main-color:
+        label: "Couleur principale"
+        type: color
+        defaut: "#A71804"
+    second-color:
+        label: "Couleur secondaire"
+        type: color
+        defaut: "#EEEEEE"
+    third-color:
+        label: "Troisième couleur (fond de certains blocs, boutons)"
+        type: color
+        defaut: "#000000"

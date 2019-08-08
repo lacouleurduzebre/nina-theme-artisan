@@ -1,0 +1,41 @@
+footer{
+  background-color: $third-color;
+  text-align: center;
+  padding: 3rem 2rem;
+  > *{
+    @include centre;
+    position: relative;
+  }
+  &, a{
+    color: $white;
+  }
+}
+
+.groupeBlocs.footer{
+  font-size: 1.6rem;
+  .blocLogoSite{
+    margin-bottom: 6.5rem;
+  }
+  .blocReseauxSociaux{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    a{
+      display: inline-block;
+      margin: 0 1.5rem;
+    }
+  }
+  .blocMenu{
+    margin-top: 6.5rem;
+    ul{
+      list-style: none;
+      display: flex;
+      padding: 0;
+      justify-content: center;
+      > li{
+        margin: 0 1rem;
+      }
+    }
+  }
+}
