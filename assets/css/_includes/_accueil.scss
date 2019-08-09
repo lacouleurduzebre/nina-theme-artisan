@@ -1,10 +1,95 @@
+body.accueil{
+  main{
+    > div:not(.blocGroupeBlocs):not(.blocGalerie){
+      @include centre;
+    }
+  }
+  h2{
+    font-weight: $weight-bold;
+  }
+}
+
+//Édito
+.blocTexte.edito{
+  padding-top: 7rem;
+  img{
+    margin: -7rem 10rem 0 7rem;
+  }
+}
+
+//Bouton découvrir
+.blocBouton.decouvrir{
+  text-align: left;
+  margin-top: 5rem;
+}
+
+//Image galet
+.imageGalet{
+  text-align: right;
+  margin-top: -7rem;
+  img{
+    max-width: 45rem;
+  }
+}
+
+//Vidéo
+body.accueil .blocVideo{
+  margin-bottom: 11rem;
+}
+
+//Services
+.blocGrille.service{
+  margin-bottom: 27rem;
+  > div > div{
+    background-color: $white;
+    margin-bottom: 4rem;
+    padding: 3rem 6rem;
+  }
+  h3{
+    font-size: 3rem;
+    font-weight: $weight-bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    &:before{
+      content: url('../img/service.png');
+      margin-right: 1rem;
+    }
+  }
+}
+
+//Galerie
+body.accueil .blocGalerie{
+  background-color: $black;
+  padding: 9rem 2rem;
+  > div{
+    @include centre;
+    flex-wrap: nowrap;
+    > div{
+      flex: 1;
+      padding: 0 2rem;
+    }
+  }
+}
+
 //Formulaire de contact
 .groupeBlocs.contact{
   background-color: $main-color;
+  padding: 6rem 2rem 7rem;
   &, a{
     color: $white;
   }
+  .blocTitre{
+    margin-bottom: 2rem;
+  }
   > div{
     @include centre;
+  }
+  label{
+    margin-top: 4rem;
+  }
+  input[type=submit]{
+    display: block;
+    margin: 3.5rem auto 0;
   }
 }

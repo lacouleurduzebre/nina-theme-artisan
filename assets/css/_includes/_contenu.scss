@@ -1,0 +1,20 @@
+body{
+  background-color: $second-color;
+}
+
+table{
+  max-width: 80rem;
+  font-weight: $weight-bold;
+}
+
+td{
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: $black;
+  padding: 2rem 0;
+  &:last-of-type{
+    border-right: none;
+    text-align: center;
+    width: 30%;
+  }
+}

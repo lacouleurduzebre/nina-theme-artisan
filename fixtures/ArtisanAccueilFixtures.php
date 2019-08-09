@@ -88,10 +88,10 @@ class ArtisanAccueilFixtures extends Fixture
             ->setClass('imageGalet')
             ->setPosition(2)
             ->setContenu([
-                'image' => '/theme/img/flamme.jpg',
+                'image' => '/theme/img/flamme.png',
                 'description' => "Nom de l'entreprise"
             ]);
-        $manager->persist($bouton);
+        $manager->persist($image);
 
         //Titre documentaire
         $titreDocumentaire = new Bloc();
@@ -158,6 +158,7 @@ class ArtisanAccueilFixtures extends Fixture
         $services->setType('Grille')
             ->setPage($accueil)
             ->setPosition(6)
+            ->setClass('service')
             ->setContenu($contenuServices);
         $manager->persist($services);
 
@@ -182,6 +183,20 @@ class ArtisanAccueilFixtures extends Fixture
                 'texte' => file_get_contents(getcwd().'/themes/artisan/fixtures/prix.html')
             ]);
         $manager->persist($edito);
+
+        //Bouton acheter
+        $contenuBoutonAcheter = [
+            'lien' => '#',
+            'texte' => 'Acheter',
+            'titre' => 'Acheter'
+        ];
+
+        $boutonAcheter = new Bloc();
+        $boutonAcheter->setType('Bouton')
+            ->setPage($accueil)
+            ->setPosition(9)
+            ->setContenu($contenuBoutonAcheter);
+        $manager->persist($boutonAcheter);
 
         //Galerie
         $contenuGalerie = [
@@ -249,7 +264,7 @@ class ArtisanAccueilFixtures extends Fixture
         $galerie = new Bloc();
         $galerie->setType('Galerie')
             ->setPage($accueil)
-            ->setPosition(9)
+            ->setPosition(10)
             ->setContenu($contenuGalerie);
         $manager->persist($galerie);
 
@@ -316,7 +331,7 @@ class ArtisanAccueilFixtures extends Fixture
         $blocFormulaire = new Bloc();
         $blocFormulaire->setType('GroupeBlocs')
             ->setPage($accueil)
-            ->setPosition(10)
+            ->setPosition(11)
             ->setContenu([
                 'groupeBlocs' => $groupeBlocsFormulaire->getId()
             ]);

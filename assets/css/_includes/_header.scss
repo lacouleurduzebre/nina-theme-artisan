@@ -1,0 +1,63 @@
+.header_front{
+  margin-bottom: 13rem;
+  padding: 3rem 3.5rem 3rem 4.5rem;
+}
+
+.groupeBlocs.header{
+  display: flex;
+  align-items: center;
+  .blocLogoSite{
+    margin-right: auto;
+  }
+}
+
+//Burger
+#burger{
+  @include respond-to("medium-up"){
+    display: none;
+  }
+}
+
+//Menu principal
+.header_front{
+  .blocMenu{
+    margin-right: 4rem;
+    ul{
+      list-style: none;
+      padding: 0;
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+  //Niveau 1
+.header_front .blocMenu > div{
+  > ul{
+    display: flex;
+    > li{
+      margin: 0 4rem;
+      position: relative;
+      > a{
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 1rem 0;
+      }
+      > ul{
+        display: none;
+      }
+      &:hover > ul{
+        display: block;
+      }
+    }
+  }
+}
+
+  //Niveau 2
+.header_front .blocMenu > div > ul > li > ul{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}

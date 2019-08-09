@@ -1,0 +1,47 @@
+//Boutons
+.blocBouton{
+  margin-top: 6rem;
+  margin-bottom: 13rem;
+  text-align: center;
+}
+
+//Formulaire
+.blocFormulaire{
+  label{
+    padding-left: 1.5rem;
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  input[type=text], select, textarea{
+    border-radius: 3rem;
+    box-shadow: none;
+  }
+  input[type=text], select{
+    height: 6.5rem;
+    width: 50%;
+  }
+  textarea{
+    width: 80%;
+  }
+}
+
+//Recherche
+.blocRecherche{
+  form{
+    background-color: darken($second-color, 10);
+    border-radius: 3rem;
+    overflow: hidden;
+  }
+  input[type=text], button[type=submit]{
+    background-color: transparent;
+    box-shadow: none;
+    height: 5rem;
+  }
+  input[type=text]{
+    padding: 0.5rem 2rem;
+  }
+  button{
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+  }
+}

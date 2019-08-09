@@ -253,14 +253,6 @@ $i: 1000;
   max-width: 960px;
 }
 
-.w1140p {
-  width: 1140px;
-}
-
-.mw1140p {
-  max-width: 1140px;
-}
-
 @while $i > 0 {
     .w#{$i}p {
       width: $i * 1px;

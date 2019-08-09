@@ -1111,14 +1111,6 @@ ul.is-unstyled, ul.unstyled {
   max-width: 960px;
 }
 
-.w1140p {
-  width: 1140px;
-}
-
-.mw1140p {
-  max-width: 1140px;
-}
-
 .w1000p {
   width: 1000px;
 }
@@ -3073,7 +3065,7 @@ button:focus {
   color: #fff;
   text-decoration: none;
   font-size: 2rem;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 3rem;
   margin: 2rem 0;
 }
 .bouton:hover {
@@ -3087,6 +3079,62 @@ button:focus {
     padding: 1rem 1.5rem;
     margin: 1rem 0;
   }
+}
+
+.header_front {
+  margin-bottom: 13rem;
+  padding: 3rem 3.5rem 3rem 4.5rem;
+}
+
+.groupeBlocs.header {
+  display: flex;
+  align-items: center;
+}
+.groupeBlocs.header .blocLogoSite {
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #burger {
+    display: none;
+  }
+}
+
+.header_front .blocMenu {
+  margin-right: 4rem;
+}
+.header_front .blocMenu ul {
+  list-style: none;
+  padding: 0;
+}
+.header_front .blocMenu a {
+  text-decoration: none;
+}
+
+.header_front .blocMenu > div > ul {
+  display: flex;
+}
+.header_front .blocMenu > div > ul > li {
+  margin: 0 4rem;
+  position: relative;
+}
+.header_front .blocMenu > div > ul > li > a {
+  text-transform: uppercase;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+.header_front .blocMenu > div > ul > li > ul {
+  display: none;
+}
+.header_front .blocMenu > div > ul > li:hover > ul {
+  display: block;
+}
+
+.header_front .blocMenu > div > ul > li > ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
 }
 
 footer {
@@ -3175,16 +3223,157 @@ body.notFull .cookies {
   left: 30rem;
 }
 
+body.accueil main > div:not(.blocGroupeBlocs):not(.blocGalerie) {
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.accueil h2 {
+  font-weight: 700;
+}
+
+.blocTexte.edito {
+  padding-top: 7rem;
+}
+.blocTexte.edito img {
+  margin: -7rem 10rem 0 7rem;
+}
+
+.blocBouton.decouvrir {
+  text-align: left;
+  margin-top: 5rem;
+}
+
+.imageGalet {
+  text-align: right;
+  margin-top: -7rem;
+}
+.imageGalet img {
+  max-width: 45rem;
+}
+
+body.accueil .blocVideo {
+  margin-bottom: 11rem;
+}
+
+.blocGrille.service {
+  margin-bottom: 27rem;
+}
+.blocGrille.service > div > div {
+  background-color: #fff;
+  margin-bottom: 4rem;
+  padding: 3rem 6rem;
+}
+.blocGrille.service h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.blocGrille.service h3:before {
+  content: url("../img/service.png");
+  margin-right: 1rem;
+}
+
+body.accueil .blocGalerie {
+  background-color: #000;
+  padding: 9rem 2rem;
+}
+body.accueil .blocGalerie > div {
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: nowrap;
+}
+body.accueil .blocGalerie > div > div {
+  flex: 1;
+  padding: 0 2rem;
+}
+
 .groupeBlocs.contact {
   background-color: #A71804;
+  padding: 6rem 2rem 7rem;
 }
 .groupeBlocs.contact, .groupeBlocs.contact a {
   color: #fff;
+}
+.groupeBlocs.contact .blocTitre {
+  margin-bottom: 2rem;
 }
 .groupeBlocs.contact > div {
   max-width: 992px;
   margin-left: auto;
   margin-right: auto;
+}
+.groupeBlocs.contact label {
+  margin-top: 4rem;
+}
+.groupeBlocs.contact input[type=submit] {
+  display: block;
+  margin: 3.5rem auto 0;
+}
+
+body {
+  background-color: #EEEEEE;
+}
+
+table {
+  max-width: 80rem;
+  font-weight: 700;
+}
+
+td {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: #000;
+  padding: 2rem 0;
+}
+td:last-of-type {
+  border-right: none;
+  text-align: center;
+  width: 30%;
+}
+
+.blocBouton {
+  margin-top: 6rem;
+  margin-bottom: 13rem;
+  text-align: center;
+}
+
+.blocFormulaire label {
+  padding-left: 1.5rem;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.blocFormulaire input[type=text], .blocFormulaire select, .blocFormulaire textarea {
+  border-radius: 3rem;
+  box-shadow: none;
+}
+.blocFormulaire input[type=text], .blocFormulaire select {
+  height: 6.5rem;
+  width: 50%;
+}
+.blocFormulaire textarea {
+  width: 80%;
+}
+
+.blocRecherche form {
+  background-color: #d5d5d5;
+  border-radius: 3rem;
+  overflow: hidden;
+}
+.blocRecherche input[type=text], .blocRecherche button[type=submit] {
+  background-color: transparent;
+  box-shadow: none;
+  height: 5rem;
+}
+.blocRecherche input[type=text] {
+  padding: 0.5rem 2rem;
+}
+.blocRecherche button {
+  font-size: 2.5rem;
+  padding: 1rem 1.5rem;
 }
 
 /*# sourceMappingURL=knacss.css.map */
