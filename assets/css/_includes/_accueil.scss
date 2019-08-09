@@ -1,0 +1,10 @@
+//Formulaire de contact
+.groupeBlocs.contact{
+  background-color: $main-color;
+  &, a{
+    color: $white;
+  }
+  > div{
+    @include centre;
+  }
+}

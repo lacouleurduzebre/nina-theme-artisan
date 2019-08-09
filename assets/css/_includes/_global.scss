@@ -3,3 +3,28 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+@mixin bouton{
+  display: inline-block;
+  border-radius: 5rem;
+  background-color: $third-color;
+  color: $white;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  &:hover{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: $white;
+    text-decoration: none;
+  }
+  @include respond-to("medium"){
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+  }
+}
+
+.bouton{
+  @include bouton;
+}
