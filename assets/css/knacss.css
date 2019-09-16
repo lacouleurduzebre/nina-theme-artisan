@@ -422,7 +422,7 @@ a:focus, a:hover, a:active {
 h1, .h1-like {
   font-size: 4rem;
   font-family: Muli, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
 }
 @media (min-width: 576px) {
   h1, .h1-like {
@@ -2402,13 +2402,14 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   border: 0;
-  box-shadow: 0 0 0 1px #333 inset;
   color: #212529;
   vertical-align: middle;
   padding: 0.5rem 1rem;
   margin: 0;
   transition: 0.25s;
   transition-property: box-shadow, background-color, color, border;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -2426,7 +2427,7 @@ select {
   padding-right: 2rem;
   border-radius: 0;
   background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20style%3D%22isolation%3Aisolate%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20height%3D%2220%22%3E%3Cpath%20d%3D%22%20M%209.96%2011.966%20L%203.523%205.589%20C%202.464%204.627%200.495%206.842%201.505%207.771%20L%201.505%207.771%20L%208.494%2014.763%20C%209.138%2015.35%2010.655%2015.369%2011.29%2014.763%20L%2011.29%2014.763%20L%2018.49%207.771%20C%2019.557%206.752%2017.364%204.68%2016.262%205.725%20L%2016.262%205.725%20L%209.96%2011.966%20Z%20%22%20fill%3D%22inherit%22/%3E%3C/svg%3E");
-  background-position: right 0.6rem center;
+  background-position: right 2rem center;
   background-repeat: no-repeat;
   background-size: 1.2rem;
 }
@@ -2702,6 +2703,8 @@ button:focus {
 .switch,
 .checkbox,
 .radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   vertical-align: text-bottom;
   outline: 0;
@@ -3061,7 +3064,7 @@ button:focus {
 .bouton {
   display: inline-block;
   border-radius: 5rem;
-  background-color: #000000;
+  background-color: #A71804;
   color: #fff;
   text-decoration: none;
   font-size: 2rem;
@@ -3082,8 +3085,12 @@ button:focus {
 }
 
 .header_front {
-  margin-bottom: 13rem;
   padding: 3rem 3.5rem 3rem 4.5rem;
+  background-color: #EEEEEE;
+  margin-bottom: 5rem;
+}
+body.accueil .header_front {
+  margin-bottom: 13rem;
 }
 
 .groupeBlocs.header {
@@ -3155,21 +3162,22 @@ footer, footer a {
 .groupeBlocs.footer {
   font-size: 1.6rem;
 }
+.groupeBlocs.footer a:hover {
+  color: #A71804;
+}
 .groupeBlocs.footer .blocLogoSite {
-  margin-bottom: 6.5rem;
+  margin-bottom: 4rem;
 }
 .groupeBlocs.footer .blocReseauxSociaux {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 .groupeBlocs.footer .blocReseauxSociaux a {
   display: inline-block;
   margin: 0 1.5rem;
 }
 .groupeBlocs.footer .blocMenu {
-  margin-top: 6.5rem;
+  margin-top: 3.5rem;
 }
 .groupeBlocs.footer .blocMenu ul {
   list-style: none;
@@ -3314,8 +3322,23 @@ body.accueil .blocGalerie > div > div {
   margin: 3.5rem auto 0;
 }
 
-body {
+body.accueil {
   background-color: #EEEEEE;
+}
+body:not(.accueil) main {
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:not(.accueil) main > div[class^=bloc]:not(.blocTitre) {
+  margin-bottom: 5rem;
+}
+body main {
+  padding: 0 2rem;
+}
+
+.has-gutter-xl > * {
+  margin-bottom: 2rem;
 }
 
 table {
@@ -3335,45 +3358,360 @@ td:last-of-type {
   width: 30%;
 }
 
+#ariane {
+  margin-bottom: 1rem;
+}
+#ariane, #ariane a {
+  color: #444444;
+}
+
+.infos-page {
+  margin-bottom: 3rem;
+}
+
+.bouton-categorie svg {
+  margin-right: 0.3rem;
+}
+
+.pagination {
+  margin: 3rem 0;
+  font-size: 1.8rem;
+}
+.pagination ul {
+  justify-content: center;
+}
+@media (max-width: 575px) {
+  .pagination ul {
+    flex-direction: row;
+  }
+}
+.pagination li {
+  margin: 0 1rem;
+}
+.pagination span {
+  opacity: 0.5;
+}
+
+.blocCommentaires-formulaire {
+  display: none;
+}
+.blocCommentaires-formulaire label {
+  display: block;
+}
+.blocCommentaires-formulaire [type=submit] {
+  display: inline-block;
+  border-radius: 5rem;
+  background-color: #A71804;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.5rem 3rem;
+  margin: 2rem 0;
+}
+.blocCommentaires-formulaire [type=submit]:hover {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .blocCommentaires-formulaire [type=submit] {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+  }
+}
+
+.blocAccordeon-titre {
+  background-color: #A71804;
+  padding: 1rem 2rem;
+  margin-bottom: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.blocAccordeon-texte {
+  display: none;
+  padding: 2rem;
+}
+
+.blocAnnuaire-utilisateur {
+  text-align: center;
+  word-break: break-all;
+  padding: 0 1rem;
+}
+.blocAnnuaire-utilisateur svg {
+  font-size: 3rem;
+}
+.blocAnnuaire-utilisateur p {
+  margin-bottom: 1rem;
+}
+.blocAnnuaire-utilisateur p:first-of-type {
+  font-weight: 700;
+}
+
+.blocAnnuaire-utilisateur-image {
+  margin-bottom: 2rem;
+}
+
 .blocBouton {
   margin-top: 6rem;
   margin-bottom: 13rem;
   text-align: center;
 }
 
-.blocFormulaire label {
+.blocFormulaire label, .blocCommentaires-formulaire label {
   padding-left: 1.5rem;
+}
+.blocFormulaire label:not(.labelCheck), .blocCommentaires-formulaire label:not(.labelCheck) {
   font-size: 2rem;
   margin-top: 2rem;
 }
-.blocFormulaire input[type=text], .blocFormulaire select, .blocFormulaire textarea {
+.blocFormulaire input[type=text], .blocFormulaire input[type=email], .blocFormulaire select, .blocFormulaire textarea, .blocCommentaires-formulaire input[type=text], .blocCommentaires-formulaire input[type=email], .blocCommentaires-formulaire select, .blocCommentaires-formulaire textarea {
   border-radius: 3rem;
   box-shadow: none;
+  background-color: #EEEEEE;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
 }
-.blocFormulaire input[type=text], .blocFormulaire select {
+.blocFormulaire input[type=text], .blocFormulaire input[type=email], .blocFormulaire select, .blocCommentaires-formulaire input[type=text], .blocCommentaires-formulaire input[type=email], .blocCommentaires-formulaire select {
   height: 6.5rem;
   width: 50%;
 }
-.blocFormulaire textarea {
+@media (max-width: 575px) {
+  .blocFormulaire input[type=text], .blocFormulaire input[type=email], .blocFormulaire select, .blocCommentaires-formulaire input[type=text], .blocCommentaires-formulaire input[type=email], .blocCommentaires-formulaire select {
+    width: 100%;
+  }
+}
+.blocFormulaire textarea, .blocCommentaires-formulaire textarea {
   width: 80%;
+}
+@media (max-width: 575px) {
+  .blocFormulaire textarea, .blocCommentaires-formulaire textarea {
+    width: 100%;
+  }
+}
+
+.blocGalerie a {
+  display: block;
+}
+.blocGalerie img {
+  width: 100%;
+}
+.objectfit .blocGalerie img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blocGrille-case-image img {
+  width: 100%;
+}
+.objectfit .blocGrille-case-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blocImage {
+  text-align: center;
+}
+
+.ficheLEI {
+  margin-bottom: 2rem;
+}
+.ficheLEI .bouton {
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+}
+
+.ficheLEI-commune {
+  margin-bottom: 0.5rem;
+  color: #A71804;
+  font-weight: 700;
+}
+
+.ficheLEI-image {
+  height: 16rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ficheLEI-image a {
+  width: 100%;
+}
+.ficheLEI-image img {
+  width: 100%;
+}
+.objectfit .ficheLEI-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.ficheLEI-titre {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.blocMenu a {
+  text-decoration: none;
+}
+
+.blocMenuLangues {
+  font-size: 2rem;
+}
+.blocMenuLangues ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+@media (max-width: 575px) {
+  .blocMenuLangues ul {
+    flex-direction: row;
+  }
+}
+.blocMenuLangues ul li {
+  margin-right: 2rem;
+}
+.blocMenuLangues ul li.active {
+  font-weight: bold;
+}
+.blocMenuLangues a {
+  text-decoration: none;
+}
+
+.blocPartage .bouton {
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.blocPlanDuSite p {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.blocPlanDuSite a {
+  text-decoration: none;
 }
 
 .blocRecherche form {
-  background-color: #d5d5d5;
-  border-radius: 3rem;
   overflow: hidden;
 }
 .blocRecherche input[type=text], .blocRecherche button[type=submit] {
-  background-color: transparent;
   box-shadow: none;
   height: 5rem;
+  background-color: #d5d5d5;
 }
 .blocRecherche input[type=text] {
   padding: 0.5rem 2rem;
 }
+.blocRecherche input {
+  border-radius: 3rem 0 0 3rem;
+}
 .blocRecherche button {
   font-size: 2.5rem;
   padding: 1rem 1.5rem;
+  border-radius: 0 3rem 3rem 0;
+}
+
+.blocReseauxSociaux a {
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-size: 3rem;
+}
+.blocReseauxSociaux a:hover {
+  color: #A71804;
+}
+
+body:not(.accueil) main > div[class^=bloc].blocSlider {
+  margin-bottom: 10rem;
+}
+
+.slick-prev, .slick-next {
+  font-size: 0;
+  background-color: transparent;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  z-index: 10;
+}
+@media (max-width: 991px) {
+  .slick-prev, .slick-next {
+    top: calc(100% + 1.5rem);
+  }
+}
+.slick-prev:before, .slick-next:before {
+  font-size: 3rem;
+}
+
+.slick-prev {
+  left: -3.5rem;
+}
+@media (max-width: 991px) {
+  .slick-prev {
+    left: 0;
+  }
+}
+
+.slick-next {
+  right: -3.5rem;
+}
+@media (max-width: 991px) {
+  .slick-next {
+    right: 0;
+  }
+}
+
+.slide--texte {
+  margin-bottom: 1rem;
+}
+
+.slide--lien a {
+  display: inline-block;
+  border-radius: 5rem;
+  background-color: #A71804;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.5rem 3rem;
+  margin: 2rem 0;
+  padding: 1rem 2.5rem;
+  margin: 0;
+}
+.slide--lien a:hover {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .slide--lien a {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+  }
+}
+
+.slick-dots li button::before {
+  font-size: 1rem;
+}
+
+.slick-slide {
+  padding: 0 1rem;
+}
+.slick-slide img {
+  width: 100%;
+}
+.objectfit .slick-slide img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blocVideo iframe, .blocVideos iframe {
+  max-height: 30rem;
 }
 
 /*# sourceMappingURL=knacss.css.map */

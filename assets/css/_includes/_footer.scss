@@ -13,21 +13,22 @@ footer{
 
 .groupeBlocs.footer{
   font-size: 1.6rem;
+  a:hover{
+    color: $main-color;
+  }
   .blocLogoSite{
-    margin-bottom: 6.5rem;
+    margin-bottom: 4rem;
   }
   .blocReseauxSociaux{
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
     a{
       display: inline-block;
       margin: 0 1.5rem;
     }
   }
   .blocMenu{
-    margin-top: 6.5rem;
+    margin-top: 3.5rem;
     ul{
       list-style: none;
       display: flex;

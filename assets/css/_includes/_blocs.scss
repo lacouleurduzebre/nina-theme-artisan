@@ -1,4 +1,42 @@
-//Boutons
+//Accordéon
+.blocAccordeon-titre{
+  background-color: $main-color;
+  padding: 1rem 2rem;
+  margin-bottom: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  color: $white;
+}
+
+.blocAccordeon-texte{
+  display: none;
+  padding: 2rem;
+}
+
+//Annuaire
+.blocAnnuaire-utilisateur{
+  text-align: center;
+  word-break: break-all;
+  padding: 0 1rem;
+  svg{
+    font-size: 3rem;
+  }
+  p{
+    margin-bottom: 1rem;
+    &:first-of-type{
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+.blocAnnuaire-utilisateur-image{
+  margin-bottom: 2rem;
+}
+
+//Bouton
 .blocBouton{
   margin-top: 6rem;
   margin-bottom: 13rem;
@@ -6,42 +44,234 @@
 }
 
 //Formulaire
-.blocFormulaire{
+.blocFormulaire, .blocCommentaires-formulaire{
   label{
     padding-left: 1.5rem;
-    font-size: 2rem;
-    margin-top: 2rem;
+    &:not(.labelCheck){
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
   }
-  input[type=text], select, textarea{
+  input[type=text], input[type=email], select, textarea{
     border-radius: 3rem;
     box-shadow: none;
+    background-color: $second-color;
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
   }
-  input[type=text], select{
+  input[type=text], input[type=email], select{
     height: 6.5rem;
     width: 50%;
+    @include respond-to("small"){
+      width: 100%;
+    }
   }
   textarea{
     width: 80%;
+    @include respond-to("small"){
+      width: 100%;
+    }
+  }
+}
+
+//Galerie
+.blocGalerie{
+  a{
+    display: block;
+  }
+  img{
+    @include cover;
+  }
+}
+
+//Grille
+.blocGrille-case-image{
+  img{
+    @include cover;
+  }
+}
+
+//Image
+.blocImage{
+  text-align: center;
+}
+
+//LEI
+.ficheLEI{
+  margin-bottom: 2rem;
+  .bouton{
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+  }
+}
+
+.ficheLEI-commune{
+  margin-bottom: .5rem;
+  color: $main-color;
+  font-weight: $weight-bold;
+}
+
+.ficheLEI-image{
+  height: 16rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    width: 100%;
+  }
+  img{
+    @include cover;
+  }
+}
+
+.ficheLEI-titre{
+  font-size: 1.8rem;
+  font-weight: $weight-bold;
+  margin-top: .5rem;
+}
+
+//Menu
+.blocMenu a{
+  text-decoration: none;
+}
+
+//Menu des langues
+.blocMenuLangues{
+  font-size: 2rem;
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    @include respond-to("small"){
+      flex-direction: row;
+    }
+    li{
+      margin-right: 2rem;
+      &.active{
+        font-weight: bold;
+      }
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+//Partage
+.blocPartage{
+  .bouton{
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+//Plan du site
+.blocPlanDuSite{
+  p{
+    font-weight: $weight-bold;
+    font-size: 1.8rem;
+  }
+  a{
+    text-decoration: none;
   }
 }
 
 //Recherche
 .blocRecherche{
   form{
-    background-color: darken($second-color, 10);
-    border-radius: 3rem;
     overflow: hidden;
   }
   input[type=text], button[type=submit]{
-    background-color: transparent;
     box-shadow: none;
     height: 5rem;
+    background-color: darken($second-color, 10);
   }
   input[type=text]{
     padding: 0.5rem 2rem;
   }
+  input{
+    border-radius: 3rem 0 0 3rem;
+  }
   button{
     font-size: 2.5rem;
     padding: 1rem 1.5rem;
+    border-radius: 0 3rem 3rem 0;
+  }
+}
+
+//Réseaux sociaux
+.blocReseauxSociaux{
+  a{
+    display: inline-block;
+    margin-right: 1.5rem;
+    font-size: 3rem;
+    &:hover{
+      color: $main-color;
+    }
+  }
+}
+
+//Slider
+body:not(.accueil) main > div[class^="bloc"].blocSlider{
+  margin-bottom: 10rem;
+}
+
+.slick-prev, .slick-next{
+  font-size: 0;
+  background-color: transparent;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  z-index: 10;
+  @include respond-to("large"){
+    top: calc(100% + 1.5rem);
+  }
+  &:before{
+    font-size: 3rem;
+  }
+}
+
+.slick-prev{
+  left: -3.5rem;
+  @include respond-to("large"){
+    left: 0;
+  }
+}
+
+.slick-next{
+  right: -3.5rem;
+  @include respond-to("large"){
+    right: 0;
+  }
+}
+
+.slide--texte{
+  margin-bottom: 1rem;
+}
+
+.slide--lien a{
+  @include bouton;
+  padding: 1rem 2.5rem;
+  margin: 0;
+}
+
+.slick-dots li button::before{
+  font-size: 1rem;
+}
+
+.slick-slide{
+  padding: 0 1rem;
+  img{
+    @include cover;
+  }
+}
+
+//Vidéo
+.blocVideo, .blocVideos{
+  iframe{
+    max-height: 30rem;
   }
 }

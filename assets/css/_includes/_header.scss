@@ -1,6 +1,10 @@
 .header_front{
-  margin-bottom: 13rem;
   padding: 3rem 3.5rem 3rem 4.5rem;
+  background-color: $second-color;
+  margin-bottom: 5rem;
+  body.accueil &{
+    margin-bottom: 13rem;
+  }
 }
 
 .groupeBlocs.header{

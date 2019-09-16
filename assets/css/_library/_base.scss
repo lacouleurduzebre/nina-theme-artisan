@@ -59,7 +59,7 @@ h1, .h1-like {
   @if variable_exists(font-family-headings) and $font-family-headings != $font-family-base{
     font-family: $font-family-headings;
   }
-  font-weight: $weight-medium;
+  font-weight: $weight-bold;
 }
 
 h2, .h2-like {

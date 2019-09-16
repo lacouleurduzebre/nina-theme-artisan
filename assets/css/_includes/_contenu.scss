@@ -1,5 +1,22 @@
 body{
-  background-color: $second-color;
+  &.accueil{
+    background-color: $second-color;
+  }
+  &:not(.accueil) main{
+    max-width: $large;
+    margin-left: auto;
+    margin-right: auto;
+    > div[class^="bloc"]:not(.blocTitre){
+      margin-bottom: 5rem;
+    }
+  }
+  main{
+    padding: 0 2rem;
+  }
+}
+
+.has-gutter-xl > *{
+  margin-bottom: 2rem;
 }
 
 table{
@@ -16,5 +33,53 @@ td{
     border-right: none;
     text-align: center;
     width: 30%;
+  }
+}
+
+//Ariane
+#ariane{
+  margin-bottom: 1rem;
+  &, a{
+    color: #444444;
+  }
+}
+
+//Infos de la page
+.infos-page{
+  margin-bottom: 3rem;
+}
+
+.bouton-categorie{
+  svg{
+    margin-right: .3rem;
+  }
+}
+
+//Pagination
+.pagination{
+  margin: 3rem 0;
+  font-size: 1.8rem;
+  ul{
+    justify-content: center;
+    @include respond-to("small"){
+      flex-direction: row;
+    }
+  }
+  li{
+    margin: 0 1rem;
+  }
+  span{
+    opacity: .5;
+  }
+}
+
+//Commentaires
+.blocCommentaires-formulaire{
+  display: none;
+  label{
+    display: block;
+  }
+  [type=submit]{
+    @include bouton;
   }
 }
